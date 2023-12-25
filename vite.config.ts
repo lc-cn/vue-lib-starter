@@ -20,11 +20,11 @@ export default defineConfig({
         alias: [
             {
                 find: /^grace-ui$/,
-                replacement: path.resolve(__dirname, 'packages/grace-ui')
+                replacement: path.resolve(__dirname, 'src')
             },
             {
                 find: /^grace-ui\/(.*)/,
-                replacement: path.resolve(__dirname, 'packages/$1')
+                replacement: path.resolve(__dirname, 'src/$1')
             }
         ],
         extensions:[
@@ -36,13 +36,13 @@ export default defineConfig({
     build: {
         outDir: "./lib",
         lib: {
-            entry: "packages/grace-ui/index.ts",
+            entry: "src/index.ts",
             name: 'grace-ui'
         },
         rollupOptions: {
             // 确保外部化处理那些你不想打包进库的依赖
             external: ['vue'],
-            input: ["packages/grace-ui/index.ts"],
+            input: ["src/index.ts"],
             output: [
                 {
                     //打包格式
@@ -72,7 +72,7 @@ export default defineConfig({
     plugins: [
         vue(),
         dts({
-            entryRoot: "./packages/grace-ui",
+            entryRoot: "./src",
             outDir: ["./lib/es", "./lib/cjs"],
             //指定使用的tsconfig.json为我们整个项目根目录下,如果不配置,你也可以在components下新建tsconfig.json
             tsconfigPath: "./tsconfig.json",

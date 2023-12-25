@@ -3,7 +3,7 @@
   "version": "0.0.1-alpha",
   "scripts": {
     "new": "bash ./template.sh",
-    "dev": "vite",
+    "dev": "vite --port 8888",
     "build": "vite build",
     "pub": "npm publish --access public"
   },

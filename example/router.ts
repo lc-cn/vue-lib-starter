@@ -1,8 +1,8 @@
 import {createRouter, createWebHistory, RouteRecordRaw} from "vue-router";
-const pageModules=import.meta.glob('../components/**/demo.vue')
+const pageModules=import.meta.glob('../src/components/**/demo.vue')
 const routes=Object.entries(pageModules).map(([realPath,component]):RouteRecordRaw=>{
     const path=realPath
-        .replace('../components','')
+        .replace('../src/components','')
         .replace(/(a-zA-Z)/,(_,str)=>str.toLowerCase())
         .replace('/demo.vue','')
         .replace(/(\/A-Za-z)/,(_,str)=>{

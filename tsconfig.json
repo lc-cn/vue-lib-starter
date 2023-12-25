@@ -23,15 +23,17 @@
         "typeRoots": ["./node_modules/@types/", "./typings"],
         "lib": ["esnext", "dom"],
         "paths": {
-            "grace-ui": ["packages/grace-ui"],
-            "grace-ui/*": ["packages/*"]
+            "grace-ui": ["src"],
+            "grace-ui/*": ["src/*"]
         }
     },
     "include": [
         "typings/**/*.d.ts",
         "typings/**/*.ts",
-        "packages/**/*.ts",
-        "packages/**/*.vue"
+        "src/**/*.ts",
+        "src/**/*.vue",
+        "example/**/*.ts",
+        "example/**/*.vue"
     ],
     "exclude": ["node_modules", "dist", "**/*.js", "discard"]
 }
